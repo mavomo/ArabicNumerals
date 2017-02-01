@@ -55,4 +55,11 @@ public void should_return_1_given_I(){
         assertThat(ArabicNumerals.convertFromRoman("XV")).isEqualTo(15);
     }
 
+
+    @Test
+    public void should_return_16_given_XVI(){
+        assertThat(ArabicNumerals.convertFromRoman("XVI")).isEqualTo(16);
+    }
+
+
 }

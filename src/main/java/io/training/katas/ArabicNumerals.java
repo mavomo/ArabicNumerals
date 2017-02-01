@@ -11,9 +11,19 @@ public class ArabicNumerals {
         Map<Character, Integer> arabicNumbersFromRomanChart = getArabicValuesFromRomanNumeralsChart();
         char[] romanNumerals = romanNumber.toCharArray();
         int value = arabicNumbersFromRomanChart.get(romanNumerals[0]);
-        for (int i = 1 ; i < romanNumerals.length; i++){
-            value++;
+
+      /*  if (romanNumber == "XV"){
+            return 15;
         }
+
+        if (romanNumber == "XVI"){
+            return 16;
+        }*/
+
+          for (int i = 1 ; i < romanNumerals.length; i++){
+              value+= arabicNumbersFromRomanChart.get(romanNumerals[i]) ;
+          }
+
         return value;
     }
 

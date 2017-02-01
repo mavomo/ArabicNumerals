@@ -24,6 +24,11 @@ public class ArabicNumeralTest {
  *  500 -> D
  *  1000 -> M
  *
+ *  4 -> IV
+ *  9 -> IX
+ *  40 -> XL
+ *  90 -> LC
+ *
  */
 
 

@@ -16,7 +16,13 @@ public class ArabicNumeralTest {
  *
  *  X -> 10
  *  XI -> 11
- *  XII -> 23
+ *  XXII -> 23
+ *
+ *  L -> 50
+ *  C -> 100
+ *  500 -> D
+ *  1000 -> M
+ *
  */
 
 
@@ -62,4 +68,34 @@ public void should_return_1_given_I(){
     }
 
 
+    @Test
+    public void should_return_25_given_XXV(){
+        assertThat(ArabicNumerals.convertFromRoman("XXV")).isEqualTo(25);
+    }
+
+    @Test
+    public void should_return_50_given_L() {
+        assertThat(ArabicNumerals.convertFromRoman("L")).isEqualTo(50);
+    }
+
+    @Test
+    public void should_return_100_given_C() {
+        assertThat(ArabicNumerals.convertFromRoman("C")).isEqualTo(100);
+    }
+
+    @Test
+    public void should_return_500_given_D() {
+        assertThat(ArabicNumerals.convertFromRoman("D")).isEqualTo(500);
+    }
+
+    @Test
+    public void should_return_1000_given_M() {
+        assertThat(ArabicNumerals.convertFromRoman("M")).isEqualTo(1000);
+    }
+
+
+    @Test
+    public void should_return_1515_given_MDXV() {
+        assertThat(ArabicNumerals.convertFromRoman("MDXV")).isEqualTo(1515);
+    }
 }

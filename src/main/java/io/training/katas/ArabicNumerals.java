@@ -12,14 +12,6 @@ public class ArabicNumerals {
         char[] romanNumerals = romanNumber.toCharArray();
         int value = arabicNumbersFromRomanChart.get(romanNumerals[0]);
 
-      /*  if (romanNumber == "XV"){
-            return 15;
-        }
-
-        if (romanNumber == "XVI"){
-            return 16;
-        }*/
-
           for (int i = 1 ; i < romanNumerals.length; i++){
               value+= arabicNumbersFromRomanChart.get(romanNumerals[i]) ;
           }
@@ -32,6 +24,10 @@ public class ArabicNumerals {
         arabicNumbersFromRomanChart.put('I', 1);
         arabicNumbersFromRomanChart.put('V', 5);
         arabicNumbersFromRomanChart.put('X', 10);
+        arabicNumbersFromRomanChart.put('L', 50);
+        arabicNumbersFromRomanChart.put('C', 100);
+        arabicNumbersFromRomanChart.put('D', 500);
+        arabicNumbersFromRomanChart.put('M', 1000);
         return arabicNumbersFromRomanChart;
     }
 }

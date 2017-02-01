@@ -2,6 +2,7 @@ package io.training.katas;
 
 import org.junit.Test;
 
+import static io.training.katas.ArabicNumerals.convertFromRoman;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class ArabicNumeralTest {
@@ -28,74 +29,85 @@ public class ArabicNumeralTest {
 
 @Test
 public void should_return_1_given_I(){
-    assertThat(ArabicNumerals.convertFromRoman("I")).isEqualTo(1);
+    assertThat(convertFromRoman("I")).isEqualTo(1);
 }
 
 
     @Test
     public void should_return_2_given_II(){
-        assertThat(ArabicNumerals.convertFromRoman("II")).isEqualTo(2);
+        assertThat(convertFromRoman("II")).isEqualTo(2);
     }
 
 
     @Test
     public void should_return_3_given_III(){
-        assertThat(ArabicNumerals.convertFromRoman("III")).isEqualTo(3);
+        assertThat(convertFromRoman("III")).isEqualTo(3);
     }
 
 
     @Test
     public void should_return_5_given_V(){
-        assertThat(ArabicNumerals.convertFromRoman("V")).isEqualTo(5);
+        assertThat(convertFromRoman("V")).isEqualTo(5);
     }
 
 
     @Test
     public void should_return_6_given_VI(){
-        assertThat(ArabicNumerals.convertFromRoman("VI")).isEqualTo(6);
+        assertThat(convertFromRoman("VI")).isEqualTo(6);
     }
 
 
     @Test
     public void should_return_15_given_XV(){
-        assertThat(ArabicNumerals.convertFromRoman("XV")).isEqualTo(15);
+        assertThat(convertFromRoman("XV")).isEqualTo(15);
     }
 
 
     @Test
     public void should_return_16_given_XVI(){
-        assertThat(ArabicNumerals.convertFromRoman("XVI")).isEqualTo(16);
+        assertThat(convertFromRoman("XVI")).isEqualTo(16);
     }
 
 
     @Test
     public void should_return_25_given_XXV(){
-        assertThat(ArabicNumerals.convertFromRoman("XXV")).isEqualTo(25);
+        assertThat(convertFromRoman("XXV")).isEqualTo(25);
     }
 
     @Test
     public void should_return_50_given_L() {
-        assertThat(ArabicNumerals.convertFromRoman("L")).isEqualTo(50);
+        assertThat(convertFromRoman("L")).isEqualTo(50);
     }
 
     @Test
     public void should_return_100_given_C() {
-        assertThat(ArabicNumerals.convertFromRoman("C")).isEqualTo(100);
+        assertThat(convertFromRoman("C")).isEqualTo(100);
     }
 
     @Test
     public void should_return_500_given_D() {
-        assertThat(ArabicNumerals.convertFromRoman("D")).isEqualTo(500);
+        assertThat(convertFromRoman("D")).isEqualTo(500);
     }
 
     @Test
     public void should_return_1000_given_M() {
-        assertThat(ArabicNumerals.convertFromRoman("M")).isEqualTo(1000);
+        assertThat(convertFromRoman("M")).isEqualTo(1000);
+    }
+
+    @Test
+    public void should_return_1515_given_MDXV() {
+        assertThat(convertFromRoman("MDXV")).isEqualTo(1515);
+    }
+
+    @Test
+    public void should_return_4_given_IV() {
+        assertThat(convertFromRoman("IV")).isEqualTo(4);
     }
 
 
     @Test
-    public void should_return_1515_given_MDXV() {
-        assertThat(ArabicNumerals.convertFromRoman("MDXV")).isEqualTo(1515);
+    public void should_return_9_given_IX() {
+        assertThat(convertFromRoman("IX")).isEqualTo(9);
     }
+
 }

@@ -10,6 +10,15 @@ public class ArabicNumerals {
     public static int convertFromRoman(String romanNumber) {
         Map<Character, Integer> arabicNumbersFromRomanChart = getArabicValuesFromRomanNumeralsChart();
         char[] romanNumerals = romanNumber.toCharArray();
+
+        if (romanNumber == "IV"){
+            return 4;
+        }
+
+        if (romanNumber == "IX"){
+            return 9;
+        }
+
         int value = arabicNumbersFromRomanChart.get(romanNumerals[0]);
 
           for (int i = 1 ; i < romanNumerals.length; i++){

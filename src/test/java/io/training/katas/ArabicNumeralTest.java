@@ -37,4 +37,22 @@ public void should_return_1_given_I(){
         assertThat(ArabicNumerals.convertFromRoman("III")).isEqualTo(3);
     }
 
+
+    @Test
+    public void should_return_5_given_V(){
+        assertThat(ArabicNumerals.convertFromRoman("V")).isEqualTo(5);
+    }
+
+
+    @Test
+    public void should_return_6_given_VI(){
+        assertThat(ArabicNumerals.convertFromRoman("VI")).isEqualTo(6);
+    }
+
+
+    @Test
+    public void should_return_15_given_XV(){
+        assertThat(ArabicNumerals.convertFromRoman("XV")).isEqualTo(15);
+    }
+
 }

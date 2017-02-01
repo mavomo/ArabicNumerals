@@ -8,20 +8,20 @@ import java.util.Map;
  */
 public class ArabicNumerals {
     public static int convertFromRoman(String romanNumber) {
-        Map<String, Integer> arabicNumbersFromRomanChart = new HashMap<>();
-        arabicNumbersFromRomanChart.put("I", 1);
+        Map<Character, Integer> arabicNumbersFromRomanChart = getArabicValuesFromRomanNumeralsChart();
         char[] romanNumerals = romanNumber.toCharArray();
-        int value = arabicNumbersFromRomanChart.get("I");
+        int value = arabicNumbersFromRomanChart.get(romanNumerals[0]);
         for (int i = 1 ; i < romanNumerals.length; i++){
             value++;
         }
-/*
-        if (romanNumber == "II"){
-            return 2;
-        }
-        if (romanNumber == "III"){
-            return 3;
-        }*/
         return value;
+    }
+
+    private static Map<Character, Integer> getArabicValuesFromRomanNumeralsChart() {
+        Map<Character, Integer> arabicNumbersFromRomanChart = new HashMap<>();
+        arabicNumbersFromRomanChart.put('I', 1);
+        arabicNumbersFromRomanChart.put('V', 5);
+        arabicNumbersFromRomanChart.put('X', 10);
+        return arabicNumbersFromRomanChart;
     }
 }

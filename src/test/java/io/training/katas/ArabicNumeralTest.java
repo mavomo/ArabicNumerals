@@ -121,4 +121,10 @@ public void should_return_1_given_I(){
         assertThat(convertFromRoman("XXIV")).isEqualTo(24);
     }
 
+
+    @Test
+    public void should_return_40_given_XL() {
+        assertThat(convertFromRoman("XL")).isEqualTo(40);
+    }
+
 }

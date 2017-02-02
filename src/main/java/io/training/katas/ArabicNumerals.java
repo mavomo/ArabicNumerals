@@ -14,22 +14,26 @@ public class ArabicNumerals {
         Map<String, Integer> arabicNumbersFromRomanChart = getArabicValuesFromRomanNumeralsChart();
 
 
-        if (romanNumber == "IV"){
+       /** if (romanNumber == "IV"){
             return 4;
         }
-
+**/
         if (romanNumber == "IX"){
             return 9;
         }
         if (romanNumber == "XXIV"){
             return 24;
         }
-
-
             char[] romanNumerals = romanNumber.toCharArray();
             int value = arabicNumbersFromRomanChart.get(String.valueOf(romanNumerals[0]));
             for (int i = 1; i < romanNumerals.length; i++) {
-                value += arabicNumbersFromRomanChart.get(String.valueOf(romanNumerals[i]));
+                if (romanNumerals.length > 1 && arabicNumbersFromRomanChart.get(String.valueOf(romanNumerals[i-1])) < arabicNumbersFromRomanChart.get(String.valueOf(romanNumerals[i]))){
+                   String combineKeys = String.valueOf(romanNumerals[i-1]).concat(String.valueOf(romanNumerals[i]));
+                    value += arabicNumbersFromRomanChart.get(combineKeys)-1;
+                }else {
+                    value += arabicNumbersFromRomanChart.get(String.valueOf(romanNumerals[i]));
+                }
+
             }
 
         return value;

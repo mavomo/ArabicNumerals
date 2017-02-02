@@ -12,31 +12,25 @@ import java.util.stream.Stream;
 public class ArabicNumerals {
     public static int convertFromRoman(String romanNumber) {
         Map<String, Integer> arabicNumbersFromRomanChart = getArabicValuesFromRomanNumeralsChart();
-
-
-       /** if (romanNumber == "IV"){
-            return 4;
-        }
-**/
-        if (romanNumber == "IX"){
-            return 9;
-        }
-        if (romanNumber == "XXIV"){
-            return 24;
-        }
             char[] romanNumerals = romanNumber.toCharArray();
             int value = arabicNumbersFromRomanChart.get(String.valueOf(romanNumerals[0]));
             for (int i = 1; i < romanNumerals.length; i++) {
-                if (romanNumerals.length > 1 && arabicNumbersFromRomanChart.get(String.valueOf(romanNumerals[i-1])) < arabicNumbersFromRomanChart.get(String.valueOf(romanNumerals[i]))){
+                Integer previousRomanLetter = arabicNumbersFromRomanChart.get(String.valueOf(romanNumerals[i - 1]));
+                Integer currentLetter = arabicNumbersFromRomanChart.get(String.valueOf(romanNumerals[i]));
+
+                if (isSubstraction(romanNumerals, previousRomanLetter, currentLetter)){
                    String combineKeys = String.valueOf(romanNumerals[i-1]).concat(String.valueOf(romanNumerals[i]));
                     value += arabicNumbersFromRomanChart.get(combineKeys)-1;
                 }else {
-                    value += arabicNumbersFromRomanChart.get(String.valueOf(romanNumerals[i]));
+                    value += currentLetter;
                 }
-
             }
 
         return value;
+    }
+
+    private static boolean isSubstraction(char[] romanNumerals, Integer previousRomanLetter, Integer currentLetter) {
+        return romanNumerals.length > 1 && previousRomanLetter < currentLetter;
     }
 
     private static Map<String, Integer> getArabicValuesFromRomanNumeralsChart() {

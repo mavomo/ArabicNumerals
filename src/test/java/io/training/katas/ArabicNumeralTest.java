@@ -115,4 +115,10 @@ public void should_return_1_given_I(){
         assertThat(convertFromRoman("IX")).isEqualTo(9);
     }
 
+
+    @Test
+    public void should_return_24_given_XIV() {
+        assertThat(convertFromRoman("XXIV")).isEqualTo(24);
+    }
+
 }

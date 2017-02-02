@@ -18,11 +18,17 @@ public class ArabicNumerals {
         if (romanNumber == "IX"){
             return 9;
         }
-        char[] romanNumerals = romanNumber.toCharArray();
+
         int value = 0;
-          for (int i = 0 ; i <romanNumerals.length; i++){
-              value+= arabicNumbersFromRomanChart.get(String.valueOf(romanNumerals[i])) ;
-          }
+        if (romanNumber.length() == 2 && arabicNumbersFromRomanChart.get(romanNumber) != null){
+            value = arabicNumbersFromRomanChart.get(romanNumber);
+        }else {
+            char[] romanNumerals = romanNumber.toCharArray();
+
+            for (int i = 0; i < romanNumerals.length; i++) {
+                value += arabicNumbersFromRomanChart.get(String.valueOf(romanNumerals[i]));
+            }
+        }
         return value;
     }
 

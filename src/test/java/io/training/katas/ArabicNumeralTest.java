@@ -6,34 +6,9 @@ import static io.training.katas.ArabicNumerals.convertFromRoman;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class ArabicNumeralTest {
-/**
- *  I -> 1
- *  II -> 2
- *  III -> 3
- *
- *  V -> 5
- *  VI -> 6
- *  VII -> 7
- *
- *  X -> 10
- *  XI -> 11
- *  XXII -> 23
- *
- *  L -> 50
- *  C -> 100
- *  500 -> D
- *  1000 -> M
- *
- *  4 -> IV
- *  9 -> IX
- *  40 -> XL
- *  90 -> LC
- *
- */
 
-
-@Test
-public void should_return_1_given_I(){
+    @Test
+    public void should_return_1_given_I(){
     assertThat(convertFromRoman("I")).isEqualTo(1);
 }
 
@@ -117,7 +92,7 @@ public void should_return_1_given_I(){
 
 
     @Test
-    public void should_return_24_given_XIV() {
+    public void should_return_24_given_XXIV() {
         assertThat(convertFromRoman("XXIV")).isEqualTo(24);
     }
 

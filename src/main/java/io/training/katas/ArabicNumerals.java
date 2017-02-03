@@ -1,10 +1,8 @@
 package io.training.katas;
 
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
-import java.util.stream.Stream;
 
 /**
  * Created by Michelle on 01/02/2017.
@@ -17,10 +15,12 @@ public class ArabicNumerals {
             for (int i = 1; i < romanNumerals.length; i++) {
                 Integer previousNumber = arabicNumbersFromRomanChart.get(String.valueOf(romanNumerals[i - 1]));
                 Integer currentNumber = arabicNumbersFromRomanChart.get(String.valueOf(romanNumerals[i]));
+
                 if (isSubstraction(romanNumerals, previousNumber, currentNumber)){
-                   String combineKeys = String.valueOf(romanNumerals[i-1]).concat(String.valueOf(romanNumerals[i]));
-                    value += arabicNumbersFromRomanChart.get(combineKeys)- previousNumber;
-                }else {
+                   String combinedRomanNumerals = String.valueOf(romanNumerals[i-1]).concat(String.valueOf(romanNumerals[i]));
+                    value += arabicNumbersFromRomanChart.get(combinedRomanNumerals)- previousNumber;
+                }
+                else {
                     value += currentNumber;
                 }
             }

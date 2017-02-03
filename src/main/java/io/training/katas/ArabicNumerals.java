@@ -43,6 +43,7 @@ public class ArabicNumerals {
         arabicNumbersFromRomanChart.put("L", 50);
         arabicNumbersFromRomanChart.put("XC", 90);
         arabicNumbersFromRomanChart.put("C", 100);
+        arabicNumbersFromRomanChart.put("CD", 400);
         arabicNumbersFromRomanChart.put("D", 500);
         arabicNumbersFromRomanChart.put("M", 1000);
         return arabicNumbersFromRomanChart;

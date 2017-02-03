@@ -145,9 +145,9 @@ public void should_return_1_given_I(){
     }
 
 
- /*   @Test
+     @Test
     public void should_return_1495_given_MCDIXV() {
-        assertThat(convertFromRoman("MCDIXV")).isEqualTo(1495);
-    }*/
+        assertThat(convertFromRoman("MCDXCV")).isEqualTo(1495);
+    }
 
 }

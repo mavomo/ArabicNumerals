@@ -15,13 +15,13 @@ public class ArabicNumerals {
             char[] romanNumerals = romanNumber.toCharArray();
             int value = arabicNumbersFromRomanChart.get(String.valueOf(romanNumerals[0]));
             for (int i = 1; i < romanNumerals.length; i++) {
-                Integer previousRomanLetter = arabicNumbersFromRomanChart.get(String.valueOf(romanNumerals[i - 1]));
-                Integer currentLetter = arabicNumbersFromRomanChart.get(String.valueOf(romanNumerals[i]));
-                if (isSubstraction(romanNumerals, previousRomanLetter, currentLetter)){
+                Integer previousNumber = arabicNumbersFromRomanChart.get(String.valueOf(romanNumerals[i - 1]));
+                Integer currentNumber = arabicNumbersFromRomanChart.get(String.valueOf(romanNumerals[i]));
+                if (isSubstraction(romanNumerals, previousNumber, currentNumber)){
                    String combineKeys = String.valueOf(romanNumerals[i-1]).concat(String.valueOf(romanNumerals[i]));
-                    value += arabicNumbersFromRomanChart.get(combineKeys)- previousRomanLetter;
+                    value += arabicNumbersFromRomanChart.get(combineKeys)- previousNumber;
                 }else {
-                    value += currentLetter;
+                    value += currentNumber;
                 }
             }
 
@@ -41,6 +41,7 @@ public class ArabicNumerals {
         arabicNumbersFromRomanChart.put("X", 10);
         arabicNumbersFromRomanChart.put("XL", 40);
         arabicNumbersFromRomanChart.put("L", 50);
+        arabicNumbersFromRomanChart.put("XC", 90);
         arabicNumbersFromRomanChart.put("C", 100);
         arabicNumbersFromRomanChart.put("D", 500);
         arabicNumbersFromRomanChart.put("M", 1000);

@@ -127,4 +127,15 @@ public void should_return_1_given_I(){
         assertThat(convertFromRoman("XL")).isEqualTo(40);
     }
 
+
+    @Test
+    public void should_return_90_given_XC() {
+        assertThat(convertFromRoman("XC")).isEqualTo(90);
+    }
+
+ /*   @Test
+    public void should_return_1495_given_MCDIXV() {
+        assertThat(convertFromRoman("MCDIXV")).isEqualTo(1495);
+    }*/
+
 }

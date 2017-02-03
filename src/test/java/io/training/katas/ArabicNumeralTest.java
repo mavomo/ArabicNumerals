@@ -139,6 +139,12 @@ public void should_return_1_given_I(){
     }
 
 
+    @Test
+    public void should_return_900_given_CM() {
+        assertThat(convertFromRoman("CM")).isEqualTo(900);
+    }
+
+
  /*   @Test
     public void should_return_1495_given_MCDIXV() {
         assertThat(convertFromRoman("MCDIXV")).isEqualTo(1495);
